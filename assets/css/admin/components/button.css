@@ -1,0 +1,112 @@
+.yext-settings__button-cards {
+	display: flex;
+	margin-top: 2.625rem;
+
+	& .yext-settings__button:not(:first-child) {
+		margin-left: 2.625rem;
+	}
+}
+
+.yext-settings__button-cards--center {
+	justify-content: center;
+}
+
+.yext-settings__button--is-style-link {
+	align-items: center;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	display: flex;
+	margin-right: 2rem;
+	padding: 0 0.75rem;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+
+	& svg {
+		margin-right: 0.5rem;
+	}
+
+	&.is-color-blue {
+		color: var(--yxt-color-brand-primary);
+	}
+}
+
+.yext-settings__button--primary {
+	background: var(--yxt-color-brand-primary);
+	border: 1px solid var(--yxt-color-brand-primary);
+	border-radius: 1.875rem;
+	color: var(--yxt-color-brand-white, #fff);
+	cursor: pointer;
+	display: inline-block;
+	font-size: var(--yxt-font-size-md-lg);
+	font-weight: var(--yxt-font-weight-bold);
+	letter-spacing: 1.5px;
+	line-height: var(--yxt-line-height-lg);
+	padding: 0.625rem 2.5rem;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&:hover,
+	&:focus {
+		background: var(--yxt-color-brand-hover);
+		border-color: var(--yxt-color-brand-hover);
+		color: var(--yxt-color-brand-white);
+		outline: none;
+	}
+
+
+	&.with-icon {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+
+		& span {
+			flex: 1;
+		}
+
+		& svg {
+			margin-left: 0.5rem;
+	
+			& path {
+				fill: var(--yxt-color-brand-white);
+			}
+		}
+	}
+
+	&.is-style-outline {
+		background: var(--yxt-color-brand-white, #fff);
+		border: 1px solid var(--yxt-color-brand-primary);
+		color: var(--yxt-color-brand-primary);
+
+		&:hover,
+		&:focus {
+			background: var(--yxt-color-brand-hover);
+			border-color: var(--yxt-color-brand-hover);
+			color: var(--yxt-color-brand-white);
+			outline: none;
+
+			&.with-icon {
+
+				& svg path {
+					fill: var(--yxt-color-brand-white);
+				}
+			}
+		}
+
+		&.with-icon {
+
+			& svg path {
+				fill: var(--yxt-color-brand-primary);
+			}
+		}
+	}
+
+	&.disabled {
+		cursor: default;
+		opacity: 0.4;
+		pointer-events: none;
+	}
+}

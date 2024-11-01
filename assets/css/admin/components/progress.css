@@ -1,0 +1,120 @@
+.yext-wizard__timeline {
+	display: none;
+	padding-top: 1.5rem;
+	position: relative;
+
+	&::before {
+		border-bottom: 3px solid var(--yxt-color-borders);
+		content: "";
+		height: 0.625rem;
+		left: 0;
+		position: absolute;
+		right: 0;
+	}
+
+	.yext-wizard[data-is-loaded="1"]:not([data-step="0"]) & {
+		display: flex !important;
+	}
+}
+
+.yext-wizard__timeline-step {
+	flex: 1;
+	text-align: center;
+}
+
+.yext-wizard__timeline-step-circle {
+	background: #f1f1f1;
+	border: 1px solid #333;
+	border-radius: 1.875rem;
+	height: 1.25rem;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	width: 1.25rem;
+	z-index: 1;
+
+	.yext-wizard__timeline-step:first-child & {
+		margin-left: 0;
+	}
+
+	.yext-wizard__timeline-step:last-child & {
+		margin-right: 0;
+	}
+
+	.yext-wizard__timeline-step--complete & {
+		border-color: var(--yxt-color-brand-primary);
+
+		&::before {
+			background-color: var(--yxt-color-brand-primary);
+			background-image: url("data:image/svg+xml,%3Csvg width='9' height='8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.96.41 3.226 5.333 1.019 3.127 0 4.145 3.395 7.54 8.149 1.43 6.959.41Z' fill='white'/%3E%3C/svg%3E");
+			background-position: center;
+			background-repeat: no-repeat;
+			border-radius: 1.875rem;
+			content: "";
+			height: 1.25rem;
+			left: -1px;
+			position: absolute;
+			top: -1px;
+			width: 1.25rem;
+		}
+	}
+
+	.yext-wizard__timeline-step--active & {
+
+		&::before {
+			background: var(--yxt-color-brand-primary);
+			border-radius: 1.875rem;
+			content: "";
+			height: 0.375rem;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 0.375rem;
+		}
+	}
+}
+
+.yext-wizard__timeline-step-circle-wrapper {
+	position: relative;
+
+	.yext-wizard__timeline-step--complete & {
+
+		&::before {
+			border-bottom: 3px solid #000;
+			content: "";
+			height: 0.625rem;
+			left: 0;
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	.yext-wizard:not([data-progress-id="0"]) .yext-wizard__timeline-step--active & {
+
+		&::before {
+			border-bottom: 3px solid #000;
+			content: "";
+			height: 0.625rem;
+			left: 0;
+			position: absolute;
+			right: 50%;
+		}
+	}
+}
+
+.yext-wizard__timeline-step-title {
+	margin-top: 0.75rem;
+
+	.yext-wizard__timeline-step--active & {
+		font-weight: 600;
+	}
+
+	.yext-wizard__timeline-step:first-child & {
+		text-align: left;
+	}
+
+	.yext-wizard__timeline-step:last-child & {
+		text-align: right;
+	}
+}

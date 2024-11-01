@@ -1,0 +1,146 @@
+:root {
+	--yxt-searchbar-button-text-color: #000;
+	--yxt-searchbar-button-text-color-hover: #000;
+}
+
+body {
+
+	& .yxt-Answers-component.yxt-SearchBar-wrapper {
+
+		& .yxt-SearchBar {
+			height: 100%;
+		}
+
+		& .yxt-GeoLocationFilter-container,
+		& .yxt-SearchBar-container {
+			background-color: var(--yxt-searchbar-form-background-color);
+			border: 0.0625rem solid var(--yxt-searchbar-form-outline-color-base);
+			border-radius: var(--yxt-searchbar-form-border-radius);
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+
+			&:hover,
+			&:focus-within {
+				box-shadow: var(--yxt-searchbar-focus-shadow);
+			}
+		}
+
+		& button.yxt-GeoLocationFilter-button,
+		& button.yxt-GeoLocationFilter-clear,
+		& button.yxt-SearchBar-button,
+		& button.yxt-SearchBar-clear {
+			align-items: center;
+			background-color: var(--yxt-searchbar-button-background-color-base);
+			background-image: none;
+			border: none;
+			color: var(--yxt-searchbar-button-text-color);
+			cursor: pointer;
+			display: flex;
+			flex-shrink: 0;
+			font: inherit;
+			padding-bottom: calc(var(--yxt-base-spacing) / 2);
+			padding-top: calc(var(--yxt-base-spacing) / 2);
+
+			&[type="submit"],
+			&[type="button"] {
+
+				& svg {
+					color: var(--yxt-searchbar-button-text-color);
+				}
+			}
+
+			&:focus {
+				background-color: var(--yxt-searchbar-button-background-color-hover);
+				color: var(--yxt-searchbar-button-text-color-hover);
+
+				&[type="submit"],
+				&[type="button"] {
+
+					& svg {
+						color: var(--yxt-searchbar-button-text-color-hover);
+					}
+				}
+
+				& .yxt-SearchBar-YextIcon,
+				& .yxt-SearchBar-AnimatedIcon {
+
+					& svg path {
+						stroke: var(--yxt-searchbar-button-text-color);
+					}
+				}
+			}
+
+			& .yxt-SearchBar-YextIcon,
+			& .yxt-SearchBar-AnimatedIcon {
+
+				& svg path {
+					stroke: var(--yxt-searchbar-button-text-color);
+				}
+			}
+		}
+
+		& button.yxt-SearchBar-button {
+
+			& .yxt-SearchBar-buttonImage {
+				display: flex;
+
+				& svg {
+					height: 2em;
+					width: 2em;
+				}
+			}
+		}
+
+		& button.yxt-SearchBar--hidden {
+			display: none;
+		}
+
+		& input.yxt-GeoLocationFilter-input,
+		& input.yxt-SearchBar-input {
+			background-color: transparent;
+			border: none;
+			color: var(--yxt-searchbar-text-color);
+			font-family: var(--yxt-font-family);
+			font-size: var(--yxt-searchbar-text-font-size);
+			font-style: normal;
+			font-weight: var(--yxt-searchbar-text-font-weight);
+			line-height: var(--yxt-searchbar-text-line-height);
+			padding: calc(var(--yxt-base-spacing) / 2) var(--yxt-base-spacing);
+			width: 100%;
+
+			&:focus {
+				box-shadow: none;
+				outline: none;
+			}
+
+			&::placeholder {
+				color: var(--yxt-searchbar-placeholder-color);
+				font-weight: var(--yxt-searchbar-placeholder-font-weight);
+			}
+		}
+
+		& .yxt-AutoComplete-wrapper {
+			background-color: var(--yxt-autocomplete-background-color);
+		}
+
+		& .yxt-AutoComplete-option--item {
+			font-weight: var(--yxt-autocomplete-text-font-weight);
+
+			&:hover {
+				background-color: var(--yxt-autocomplete-option-hover-background-color);
+			}
+		}
+
+		& .yxt-AutoComplete-option--item,
+		& .yxt-AutoComplete-option--promptHeader {
+			color: var(--yxt-autocomplete-text-color);
+			font-size: var(--yxt-autocomplete-text-font-size);
+			line-height: var(--yxt-autocomplete-text-line-height);
+		}
+
+		& .yxt-AutoComplete-option--promptHeader {
+			font-weight: var(--yxt-autocomplete-prompt-header-font-weight);
+		}
+	}
+}

@@ -1,0 +1,15 @@
+#yext-search-bar-preview {
+	background: #efefef;
+	box-sizing: border-box;
+	height: 400px;
+	padding: 1rem;
+	top: 5.75rem;
+}
+
+.yext-settings__card-preview {
+	
+	& h4 {
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
